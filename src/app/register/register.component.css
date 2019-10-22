@@ -1,0 +1,27 @@
+.header{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .row{
+    margin-top: 10px;
+  }
+  
+  .error{
+    color: red;
+  }
+  
+  .success{
+    color: green;
+  }
+
+#register_div{
+  padding: 20px;
+  border-color: transparent;
+  border: 1px solid white;
+  border-radius:15px;
+  box-shadow: 2px 5px 8px 8px silver;
+  position: relative;
+}  
+  

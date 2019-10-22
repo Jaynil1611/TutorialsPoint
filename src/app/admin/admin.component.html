@@ -1,0 +1,46 @@
+<br><br>
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <form [formGroup]="this.productService.form" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="$key">
+      <div class="form-group">
+          <label>Product Name</label>
+          <input formControlName="prodName" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.prodName.errors}">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.prodName.errors">
+            This field is required.</div>
+        </div>
+        <div class="form-group">
+            <label>Product Description</label>
+            <input formControlName="prodDesc" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.prodDesc.errors}">
+            <div class="invalid-feedback" *ngIf="submitted && formControls.prodDesc.errors">
+              This field is required.</div>
+          </div>
+          <div class="form-group">
+              <label>Product Cost</label>
+              <input formControlName="prodCost" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.prodCost.errors}">
+              <div class="invalid-feedback" *ngIf="submitted && formControls.prodCost.errors">
+                This field is required.</div>
+            </div>
+            <div class="form-group">
+                <label>Product URL</label>
+                <input formControlName="prodUrl" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.prodUrl.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && formControls.prodUrl.errors">
+                  This field is required.</div>
+              </div>
+              <div class="form-group">
+                  <label>Product Discount</label>
+                  <input formControlName="prodDisc" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.prodDisc.errors}">
+                  <div class="invalid-feedback" *ngIf="submitted && formControls.prodDisc.errors">
+                    This field is required.</div>
+                </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Submit">
+      </div>
+    </form>
+    <div class="alert alert-info"  *ngIf="showSuccess">
+        Submitted successfully.
+      </div>
+  </div>
+</div>
+</div>

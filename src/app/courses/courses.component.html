@@ -1,0 +1,57 @@
+<section style="background-image: url(
+  https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqJ34U1IAGS0XeYgc0JLYm2BrFJdAKWtn_XxTopq7QBoL22nZl)">
+<!-- Page info -->
+<div class="page-info-section set-bg" style="background-image:url(/assets/page-bg/3.jpg)">
+  <div class="container">
+    <div class="site-breadcrumb">
+      <a href="#">Home</a>
+      <span>Courses</span>
+    </div>
+  </div>
+</div>
+<!-- Page info end -->
+
+<!-- search section -->
+<section class="search-section ss-other-page">
+  <div class="container">
+    <div class="search-warp">
+      <div class="section-title text-white">
+        <h2><span>Course</span></h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <!-- search form -->
+          <form class="course-search-form">
+            <input type="text" placeholder="Course">
+            <input type="text" class="last-m" placeholder="Category">
+            <button class="site-btn btn-dark">Search Course</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br>
+</section>
+<h1 style="text-align:center;"><a href="https://www.tutorialspoint.com/tutorialslibrary.htm" title="tutorialspoint library"><i class="fa fa-cubes"></i> Tutorials <b>Library</b> <br/></a></h1>   
+<!-- search section end -->
+<!-- <app-admin></app-admin> -->
+<div class="container" style="margin-top:5%;">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" *ngFor="let product of productArray">
+        <div class="card">
+            <div class="card-header bg-light">
+                <img src={{product.prodUrl}} class="card-img-top center">
+            </div>    
+            <div class="card-body">
+                <h3 class="text-center text-primary">{{product.prodName}}</h3>
+                <p class="card-text">{{product.prodDesc}}</p>
+                <a type="button" class="btn btn-info btn-block" (click)="onEnroll(product)">Enroll Now</a>
+            </div>
+            <div class="card-footer bg-light">
+                <h5 class="text-center">Cost: {{product.prodCost | currency:'INR':symbol}}/- <small class="text-success"><b>[ {{product.prodDisc}} discount ]</b></small></h5></div>
+        </div>
+        <br><hr><br>
+    </div>
+</div>
+</div>
+</section>

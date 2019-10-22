@@ -1,0 +1,31 @@
+<form class="form-inline">
+  <input class="form-control" name="searchInput" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
+  <button class="btn btn-outline-primary" (click)="searchText=''">X</button>
+</form><br>
+<div class="table-responsive">
+<table class="table table-striped table-condensed table-hover table-bordered">
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>Location</th>
+    <th></th>
+  </thead>
+  <ng-container *ngFor="let student of studentArray">
+    <tr *ngIf="filterCondition(student)">
+      <td>{{student.fullName}}</td>
+      <td>{{student.email}}</td>
+        <td>{{student.mobile}}</td>
+        <td>{{student.location}}</td>
+        <td>
+          <button class="btn btn-outline-info" (click)="studentService.populateForm(student)"><i class="fa fa-pencil"></i></button>&nbsp;
+          <button class="btn btn-outline-danger" (click)="onDelete(student.$key)"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    
+  </ng-container>
+</table>
+</div>
+<div class="alert alert-danger" *ngIf="showDeletedMessage">
+  Deleted successfully.
+</div>
